@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bobo's Kitchen - Order</title>
+</head>
+
+<body>
+
+    <h1>Place Your Order</h1>
+
+    <hr>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="menu.html">Menu</a> |
+        <a href="order.html">Order</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <hr>
+
+    <h2>Order Form</h2>
+
+    <form>
+
+        <label>Customer Name:</label>
+        <br>
+        <input type="text" name="customerName">
+        <br><br>
+
+        <label>Email Address:</label>
+        <br>
+        <input type="email" name="email">
+        <br><br>
+
+        <label>Select Food:</label>
+        <br>
+
+        <select>
+
+            <option>Burger</option>
+            <option>Pizza</option>
+            <option>French Fries</option>
+            <option>Chicken Wings</option>
+            <option>Beef Steak</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Quantity:</label>
+        <br>
+        <input type="number" min="1">
+        <br><br>
+
+        <label>Delivery Method:</label>
+        <br>
+
+        <input type="radio" name="delivery"> Delivery
+        <br>
+
+        <input type="radio" name="delivery"> Pick Up
+
+        <br><br>
+
+        <label>Special Instructions:</label>
+        <br>
+
+        <textarea rows="5" cols="40"></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Submit Order
+        </button>
+
+    </form>
+
+</body>
+
+</html>
