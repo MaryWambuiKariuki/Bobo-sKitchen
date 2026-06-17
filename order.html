@@ -1,26 +1,81 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bobo's Kitchen - Order</title>
 </head>
 
 <body>
 
-    <h1>Place Your Order</h1>
+```
+<header>
 
-    <hr>
+    <h1>Bobo's Kitchen</h1>
 
     <nav>
         <a href="index.html">Home</a> |
-        <a href="menu.html">Menu</a> |
         <a href="order.html">Order</a> |
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a> |
+        <a href="login.html">Login</a>
     </nav>
 
-    <hr>
+</header>
 
-    <h2>Order Form</h2>
+<hr>
+
+<section>
+
+    <h2>Our Menu</h2>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Food Item</th>
+            <th>Price (Ksh)</th>
+        </tr>
+
+        <tr>
+            <td>Burger</td>
+            <td>450</td>
+        </tr>
+
+        <tr>
+            <td>Pizza</td>
+            <td>850</td>
+        </tr>
+
+        <tr>
+            <td>French Fries</td>
+            <td>250</td>
+        </tr>
+
+        <tr>
+            <td>Chicken Wings</td>
+            <td>600</td>
+        </tr>
+
+        <tr>
+            <td>Beef Steak</td>
+            <td>950</td>
+        </tr>
+
+        <tr>
+            <td>Chicken Burger</td>
+            <td>550</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>Place Your Order</h2>
 
     <form>
 
@@ -44,6 +99,7 @@
             <option>French Fries</option>
             <option>Chicken Wings</option>
             <option>Beef Steak</option>
+            <option>Chicken Burger</option>
 
         </select>
 
@@ -54,13 +110,16 @@
         <input type="number" min="1">
         <br><br>
 
-        <label>Delivery Method:</label>
+        <label>Order Type:</label>
         <br>
 
-        <input type="radio" name="delivery"> Delivery
+        <input type="radio" name="orderType"> Dine In
         <br>
 
-        <input type="radio" name="delivery"> Pick Up
+        <input type="radio" name="orderType"> Take Away
+        <br>
+
+        <input type="radio" name="orderType"> Delivery
 
         <br><br>
 
@@ -72,10 +131,129 @@
         <br><br>
 
         <button type="submit">
-            Submit Order
+            Place Order
         </button>
 
     </form>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>Customer Reviews</h2>
+
+    <article>
+
+        <h4>★★★★★</h4>
+
+        <p>
+            The pizza was amazing and arrived on time.
+        </p>
+
+        <p>
+            - Brian
+        </p>
+
+    </article>
+
+    <article>
+
+        <h4>★★★★☆</h4>
+
+        <p>
+            Great service and friendly staff.
+        </p>
+
+        <p>
+            - Alice
+        </p>
+
+    </article>
+
+    <article>
+
+        <h4>★★★★★</h4>
+
+        <p>
+            Best burger I have had in a long time.
+        </p>
+
+        <p>
+            - James
+        </p>
+
+    </article>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>Leave a Review</h2>
+
+    <form>
+
+        <label>Your Name:</label>
+        <br>
+        <input type="text">
+        <br><br>
+
+        <label>Food Ordered:</label>
+        <br>
+
+        <select>
+
+            <option>Burger</option>
+            <option>Pizza</option>
+            <option>French Fries</option>
+            <option>Chicken Wings</option>
+            <option>Beef Steak</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Rating:</label>
+        <br>
+
+        <select>
+            <option>★★★★★</option>
+            <option>★★★★☆</option>
+            <option>★★★☆☆</option>
+            <option>★★☆☆☆</option>
+            <option>★☆☆☆☆</option>
+        </select>
+
+        <br><br>
+
+        <label>Review:</label>
+        <br>
+
+        <textarea rows="5" cols="40"></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Submit Review
+        </button>
+
+    </form>
+
+</section>
+
+<hr>
+
+<footer>
+
+    <p>
+        © 2026 Bobo's Kitchen. All Rights Reserved.
+    </p>
+
+</footer>
+```
 
 </body>
 
