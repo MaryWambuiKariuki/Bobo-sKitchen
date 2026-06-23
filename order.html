@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bobo's Kitchen - Order</title>
+    <title>Order - Bobo's Kitchen</title>
 </head>
 
 <body>
@@ -13,9 +13,9 @@
 ```
 <header>
 
-    <h1>Bobo's Kitchen</h1>
+    <h1 align="center">Bobo's Kitchen</h1>
 
-    <nav>
+    <nav align="center">
         <a href="index.html">Home</a> |
         <a href="order.html">Order</a> |
         <a href="contact.html">Contact</a> |
@@ -26,234 +26,156 @@
 
 <hr>
 
-<section>
+<h2 align="center">Our Menu</h2>
 
-    <h2>Our Menu</h2>
+<center>
 
-    <table border="1" cellpadding="10">
+    <h3>Burger - Ksh 450</h3>
 
-        <tr>
-            <th>Food Item</th>
-            <th>Price (Ksh)</th>
-        </tr>
+    <img src="images/burger.jpg"
+         alt="Burger"
+         width="250">
 
-        <tr>
-            <td>Burger</td>
-            <td>450</td>
-        </tr>
+    <p><strong>Customer Reviews</strong></p>
 
-        <tr>
-            <td>Pizza</td>
-            <td>850</td>
-        </tr>
+    <p>"Very delicious burger." - Brian</p>
+    <p>"Fresh and tasty." - Alice</p>
 
-        <tr>
-            <td>French Fries</td>
-            <td>250</td>
-        </tr>
+    <hr width="50%">
 
-        <tr>
-            <td>Chicken Wings</td>
-            <td>600</td>
-        </tr>
+    <h3>Pizza - Ksh 850</h3>
 
-        <tr>
-            <td>Beef Steak</td>
-            <td>950</td>
-        </tr>
+    <img src="images/pizza.jpg"
+         alt="Pizza"
+         width="250">
 
-        <tr>
-            <td>Chicken Burger</td>
-            <td>550</td>
-        </tr>
+    <p><strong>Customer Reviews</strong></p>
 
-    </table>
+    <p>"Best pizza in town." - James</p>
+    <p>"Very cheesy and filling." - Mary</p>
 
-</section>
+    <hr width="50%">
+
+    <h3>French Fries - Ksh 250</h3>
+
+    <img src="images/fries.jpg"
+         alt="Fries"
+         width="250">
+
+    <p><strong>Customer Reviews</strong></p>
+
+    <p>"Perfectly crispy." - Kevin</p>
+    <p>"Affordable and delicious." - Sarah</p>
+
+</center>
 
 <hr>
 
-<section>
+<h2 align="center">Place Your Order</h2>
 
-    <h2>Place Your Order</h2>
+<form align="center">
 
-    <form>
+    <label>Customer Name:</label>
+    <br>
 
-        <label>Customer Name:</label>
-        <br>
-        <input type="text" name="customerName">
-        <br><br>
+    <input type="text">
 
-        <label>Email Address:</label>
-        <br>
-        <input type="email" name="email">
-        <br><br>
+    <br><br>
 
-        <label>Select Food:</label>
-        <br>
+    <label>Email Address:</label>
+    <br>
 
-        <select>
+    <input type="email">
 
-            <option>Burger</option>
-            <option>Pizza</option>
-            <option>French Fries</option>
-            <option>Chicken Wings</option>
-            <option>Beef Steak</option>
-            <option>Chicken Burger</option>
+    <br><br>
 
-        </select>
+    <label>Select Food:</label>
 
-        <br><br>
+    <br>
 
-        <label>Quantity:</label>
-        <br>
-        <input type="number" min="1">
-        <br><br>
+    <select>
 
-        <label>Order Type:</label>
-        <br>
+        <option>Burger</option>
+        <option>Pizza</option>
+        <option>French Fries</option>
 
-        <input type="radio" name="orderType"> Dine In
-        <br>
+    </select>
 
-        <input type="radio" name="orderType"> Take Away
-        <br>
+    <br><br>
 
-        <input type="radio" name="orderType"> Delivery
+    <label>Quantity:</label>
 
-        <br><br>
+    <br>
 
-        <label>Special Instructions:</label>
-        <br>
+    <input type="number" min="1">
 
-        <textarea rows="5" cols="40"></textarea>
+    <br><br>
 
-        <br><br>
+    <label>Special Instructions:</label>
 
-        <button type="submit">
-            Place Order
-        </button>
+    <br>
 
-    </form>
+    <textarea rows="5" cols="40"></textarea>
 
-</section>
+    <br><br>
+
+    <button type="submit">
+        Place Order
+    </button>
+
+</form>
 
 <hr>
 
-<section>
+<h2 align="center">Leave A Review</h2>
 
-    <h2>Customer Reviews</h2>
+<form align="center">
 
-    <article>
+    <label>Your Name:</label>
 
-        <h4>★★★★★</h4>
+    <br>
 
-        <p>
-            The pizza was amazing and arrived on time.
-        </p>
+    <input type="text">
 
-        <p>
-            - Brian
-        </p>
+    <br><br>
 
-    </article>
+    <label>Food Item:</label>
 
-    <article>
+    <br>
 
-        <h4>★★★★☆</h4>
+    <select>
 
-        <p>
-            Great service and friendly staff.
-        </p>
+        <option>Burger</option>
+        <option>Pizza</option>
+        <option>French Fries</option>
 
-        <p>
-            - Alice
-        </p>
+    </select>
 
-    </article>
+    <br><br>
 
-    <article>
+    <label>Review:</label>
 
-        <h4>★★★★★</h4>
+    <br>
 
-        <p>
-            Best burger I have had in a long time.
-        </p>
+    <textarea rows="5" cols="40"></textarea>
 
-        <p>
-            - James
-        </p>
+    <br><br>
 
-    </article>
+    <button type="submit">
+        Submit Review
+    </button>
 
-</section>
-
-<hr>
-
-<section>
-
-    <h2>Leave a Review</h2>
-
-    <form>
-
-        <label>Your Name:</label>
-        <br>
-        <input type="text">
-        <br><br>
-
-        <label>Food Ordered:</label>
-        <br>
-
-        <select>
-
-            <option>Burger</option>
-            <option>Pizza</option>
-            <option>French Fries</option>
-            <option>Chicken Wings</option>
-            <option>Beef Steak</option>
-
-        </select>
-
-        <br><br>
-
-        <label>Rating:</label>
-        <br>
-
-        <select>
-            <option>★★★★★</option>
-            <option>★★★★☆</option>
-            <option>★★★☆☆</option>
-            <option>★★☆☆☆</option>
-            <option>★☆☆☆☆</option>
-        </select>
-
-        <br><br>
-
-        <label>Review:</label>
-        <br>
-
-        <textarea rows="5" cols="40"></textarea>
-
-        <br><br>
-
-        <button type="submit">
-            Submit Review
-        </button>
-
-    </form>
-
-</section>
+</form>
 
 <hr>
 
 <footer>
 
-    <p>
-        © 2026 Bobo's Kitchen. All Rights Reserved.
+    <p align="center">
+        © 2026 Bobo's Kitchen
     </p>
 
 </footer>
-```
 
 </body>
 
