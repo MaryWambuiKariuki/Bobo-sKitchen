@@ -948,21 +948,429 @@ if (!$order_result) {
 
 
     <!-- =====================================================
-         FUTURE ADMIN MANAGEMENT
+         ADMIN MANAGEMENT
     ====================================================== -->
 
     <section class="dashboard-card">
 
-        <h2>
-            Staff Management
-        </h2>
+    <h2>
+        Staff Management
+    </h2>
 
-        <p>
-            Admin management functions will be
-            added in the next step.
-        </p>
+    <p>
+        Admin can add or remove employees
+        and employers.
+    </p>
 
-    </section>
+
+    <!-- =====================================================
+         ADD STAFF
+    ====================================================== -->
+
+    <h3>
+        Add Employee or Employer
+    </h3>
+
+
+    <form
+        class="main-form"
+        action="../admin_add_user.php"
+        method="POST"
+    >
+
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            name="username"
+            required
+        >
+
+
+        <label for="password">
+            Temporary Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            required
+        >
+
+
+        <label for="role">
+            Role
+        </label>
+
+        <select
+            id="role"
+            name="role"
+            required
+        >
+
+            <option value="">
+                Select Role
+            </option>
+
+            <option value="employee">
+                Employee
+            </option>
+
+            <option value="employer">
+                Employer
+            </option>
+
+        </select>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Add Staff Member
+        </button>
+
+    </form>
+
+
+    <hr>
+
+
+    <!-- =====================================================
+         MANAGE EMPLOYEES
+    ====================================================== -->
+
+    <h3>
+        Manage Employees
+    </h3>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        User ID
+                    </th>
+
+                    <th>
+                        Username
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            <?php
+
+            /*
+            |--------------------------------------------------------------------------
+            | Get employees again
+            |--------------------------------------------------------------------------
+            */
+
+            $manage_employee_sql = "
+                SELECT
+                    user_id,
+                    username
+                FROM users
+                WHERE role = 'employee'
+                ORDER BY username ASC
+            ";
+
+
+            $manage_employee_result =
+                $conn->query(
+                    $manage_employee_sql
+                );
+
+
+            if (
+                $manage_employee_result &&
+                $manage_employee_result->num_rows > 0
+            ) {
+
+
+                while (
+                    $employee =
+                    $manage_employee_result->fetch_assoc()
+                ) {
+
+            ?>
+
+                <tr>
+
+                    <td>
+
+                        <?php
+
+                        echo htmlspecialchars(
+                            $employee["user_id"]
+                        );
+
+                        ?>
+
+                    </td>
+
+
+                    <td>
+
+                        <?php
+
+                        echo htmlspecialchars(
+                            $employee["username"]
+                        );
+
+                        ?>
+
+                    </td>
+
+
+                    <td>
+
+                        <form
+                            action="../admin_delete_user.php"
+                            method="POST"
+                            onsubmit="return confirm(
+                                'Are you sure you want to delete this employee?'
+                            );"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="user_id"
+                                value="<?php
+                                    echo $employee["user_id"];
+                                ?>"
+                            >
+
+
+                            <button
+                                type="submit"
+                                class="btn delete-btn"
+                            >
+                                Delete
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            <?php
+
+                }
+
+            } else {
+
+            ?>
+
+                <tr>
+
+                    <td colspan="3">
+
+                        No employees found.
+
+                    </td>
+
+                </tr>
+
+            <?php
+
+            }
+
+            ?>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- =====================================================
+         MANAGE EMPLOYERS
+    ====================================================== -->
+
+    <h3>
+        Manage Employers
+    </h3>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        User ID
+                    </th>
+
+                    <th>
+                        Username
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            <?php
+
+            /*
+            |--------------------------------------------------------------------------
+            | Get employers
+            |--------------------------------------------------------------------------
+            */
+
+            $manage_employer_sql = "
+                SELECT
+                    user_id,
+                    username
+                FROM users
+                WHERE role = 'employer'
+                ORDER BY username ASC
+            ";
+
+
+            $manage_employer_result =
+                $conn->query(
+                    $manage_employer_sql
+                );
+
+
+            if (
+                $manage_employer_result &&
+                $manage_employer_result->num_rows > 0
+            ) {
+
+
+                while (
+                    $employer =
+                    $manage_employer_result->fetch_assoc()
+                ) {
+
+            ?>
+
+                <tr>
+
+                    <td>
+
+                        <?php
+
+                        echo htmlspecialchars(
+                            $employer["user_id"]
+                        );
+
+                        ?>
+
+                    </td>
+
+
+                    <td>
+
+                        <?php
+
+                        echo htmlspecialchars(
+                            $employer["username"]
+                        );
+
+                        ?>
+
+                    </td>
+
+
+                    <td>
+
+                        <form
+                            action="../admin_delete_user.php"
+                            method="POST"
+                            onsubmit="return confirm(
+                                'Are you sure you want to delete this employer?'
+                            );"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="user_id"
+                                value="<?php
+                                    echo $employer["user_id"];
+                                ?>"
+                            >
+
+
+                            <button
+                                type="submit"
+                                class="btn delete-btn"
+                            >
+                                Delete
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            <?php
+
+                }
+
+            } else {
+
+            ?>
+
+                <tr>
+
+                    <td colspan="3">
+
+                        No employers found.
+
+                    </td>
+
+                </tr>
+
+            <?php
+
+            }
+
+            ?>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
 
 
 </main>
