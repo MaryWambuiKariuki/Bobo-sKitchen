@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "../db.php";
+require_once "db.php";
 
 
 /*
@@ -13,7 +13,7 @@ require_once "../db.php";
 
 if (!isset($_SESSION["user_id"])) {
 
-    header("Location: ../../login.html");
+    header("Location: ../login.html");
 
     exit();
 
@@ -28,7 +28,7 @@ if (!isset($_SESSION["user_id"])) {
 
 if ($_SESSION["role"] !== "employee") {
 
-    header("Location: ../../login.html");
+    header("Location: ../login.html");
 
     exit();
 
@@ -89,8 +89,7 @@ $stmt = $conn->prepare($sql);
 if (!$stmt) {
 
     die(
-        "SQL Error: " .
-        $conn->error
+        "SQL Error: " . $conn->error
     );
 
 }
@@ -106,7 +105,7 @@ $stmt->bind_param(
 if ($stmt->execute()) {
 
     header(
-        "Location: employee.php"
+        "Location: Dashboard/employee.php"
     );
 
     exit();
@@ -121,7 +120,7 @@ if ($stmt->execute()) {
             Something went wrong.
         </p>
 
-        <a href='employee.php'>
+        <a href='Dashboard/employee.php'>
             Return to Employee Dashboard
         </a>
 

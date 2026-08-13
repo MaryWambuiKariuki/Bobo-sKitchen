@@ -442,7 +442,7 @@ if (!$result) {
                     ?>
 
                     <form
-                        action="update_order.php"
+                        action="../update_order.php"
                         method="POST"
                     >
 
