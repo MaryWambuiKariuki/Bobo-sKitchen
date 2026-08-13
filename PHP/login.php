@@ -2,51 +2,18 @@
 
 session_start();
 
+require_once "db.php";
+
+
 /*
 |--------------------------------------------------------------------------
-| Login Handler
+| Check if the form was submitted
 |--------------------------------------------------------------------------
-|
-| Database authentication will be implemented when
-| MySQL is added.
-|
 */
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
     header("Location: ../login.html");
-
-    exit();
-
-}
-
-
-$username =
-    trim($_POST["username"] ?? "");
-
-$password =
-    $_POST["password"] ?? "";
-
-$role =
-    $_POST["role"] ?? "";
-
-
-/*
-|--------------------------------------------------------------------------
-| Basic validation
-|--------------------------------------------------------------------------
-*/
-
-if (
-    empty($username) ||
-    empty($password) ||
-    empty($role)
-) {
-
-    header(
-        "Location: ../login.html?error=required"
-    );
-
     exit();
 
 }
@@ -54,39 +21,122 @@ if (
 
 /*
 |--------------------------------------------------------------------------
-| DATABASE LOGIN WILL GO HERE
+| Get form information
 |--------------------------------------------------------------------------
-|
-| Later:
-|
-| 1. Connect to MySQL
-| 2. Find the user
-| 3. Verify the password
-| 4. Verify the role
-| 5. Create the session
-| 6. Redirect to the correct dashboard
-|
 */
+
+$username = trim($_POST["username"] ?? "");
+$password = $_POST["password"] ?? "";
+$role = $_POST["role"] ?? "";
 
 
 /*
 |--------------------------------------------------------------------------
-| Temporary message
+| Make sure all fields were completed
 |--------------------------------------------------------------------------
 */
 
-echo "<h2>PHP Login System</h2>";
+if (empty($username) || empty($password) || empty($role)) {
 
-echo "<p>";
+    die("Please complete all login fields.");
 
-echo "The login form was successfully received.";
+}
 
-echo "</p>";
 
-echo "<p>";
+/*
+|--------------------------------------------------------------------------
+| Find the user
+|--------------------------------------------------------------------------
+*/
 
-echo "MySQL authentication will be connected next.";
+$sql = "SELECT * FROM users WHERE username = ? AND role = ?";
 
-echo "</p>";
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param("ss", $username, $role);
+
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+
+/*
+|--------------------------------------------------------------------------
+| Check if user exists
+|--------------------------------------------------------------------------
+*/
+
+if ($result->num_rows === 1) {
+
+    $user = $result->fetch_assoc();
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Verify password
+    |--------------------------------------------------------------------------
+    */
+
+    if (password_verify($password, $user["password"])) {
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Login successful
+        |--------------------------------------------------------------------------
+        */
+
+        $_SESSION["user_id"] = $user["user_id"];
+
+        $_SESSION["full_name"] = $user["full_name"];
+
+        $_SESSION["username"] = $user["username"];
+
+        $_SESSION["role"] = $user["role"];
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Redirect according to role
+        |--------------------------------------------------------------------------
+        */
+
+        if ($user["role"] === "employee") {
+
+            header("Location: employee_dashboard.php");
+            exit();
+
+        }
+
+        elseif ($user["role"] === "employer") {
+
+            header("Location: employer_dashboard.php");
+            exit();
+
+        }
+
+        elseif ($user["role"] === "admin") {
+
+            header("Location: admin_dashboard.php");
+            exit();
+
+        }
+
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Login failed
+|--------------------------------------------------------------------------
+*/
+
+echo "<h2>Login Failed</h2>";
+
+echo "<p>Incorrect username, password or role.</p>";
+
+echo '<p><a href="../login.html">Try Again</a></p>';
 
 ?>
