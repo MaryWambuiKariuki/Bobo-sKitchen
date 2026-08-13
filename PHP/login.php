@@ -103,21 +103,21 @@ if ($result->num_rows === 1) {
 
         if ($user["role"] === "employee") {
 
-            header("Location: employee_dashboard.php");
+            header("Location: dashboard/employee.php");
             exit();
 
         }
 
         elseif ($user["role"] === "employer") {
 
-            header("Location: employer_dashboard.php");
+            header("Location: dashboard/employer.php");
             exit();
 
         }
 
         elseif ($user["role"] === "admin") {
 
-            header("Location: admin_dashboard.php");
+            header("Location: dashboard/admin.php");
             exit();
 
         }
