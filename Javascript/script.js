@@ -53,32 +53,46 @@ if (welcomeMessage) {
 
 
 /* =========================================================
-   2. DARK / LIGHT MODE
+   2. LIGHT / DARK MODE
    ========================================================= */
 
-const themeToggle =
-    document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", function () {
+
+    const themeButton =
+        document.getElementById("themeToggle");
 
 
-const savedTheme =
-    localStorage.getItem("theme");
+    if (!themeButton) {
+        return;
+    }
 
 
-if (savedTheme === "dark") {
+    /* Check saved theme */
 
-    document.body.classList.add(
-        "dark-mode"
-    );
-
-}
+    const savedTheme =
+        localStorage.getItem("theme");
 
 
-if (themeToggle) {
+    if (savedTheme === "dark") {
 
-    updateThemeButton();
+        document.body.classList.add("dark-mode");
+
+        themeButton.textContent =
+            "Light Mode";
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+        themeButton.textContent =
+            "Dark Mode";
+
+    }
 
 
-    themeToggle.addEventListener(
+    /* Change theme when button is clicked */
+
+    themeButton.addEventListener(
         "click",
         function () {
 
@@ -98,6 +112,9 @@ if (themeToggle) {
                     "dark"
                 );
 
+                themeButton.textContent =
+                    "Light Mode";
+
             } else {
 
                 localStorage.setItem(
@@ -105,42 +122,15 @@ if (themeToggle) {
                     "light"
                 );
 
+                themeButton.textContent =
+                    "Dark Mode";
+
             }
-
-
-            updateThemeButton();
 
         }
     );
 
-}
-
-
-function updateThemeButton() {
-
-    if (!themeToggle) {
-        return;
-    }
-
-
-    if (
-        document.body.classList.contains(
-            "dark-mode"
-        )
-    ) {
-
-        themeToggle.textContent =
-            "☀️ Light Mode";
-
-    } else {
-
-        themeToggle.textContent =
-            "🌙 Dark Mode";
-
-    }
-
-}
-
+});
 
 /* =========================================================
    3. FORM VALIDATION

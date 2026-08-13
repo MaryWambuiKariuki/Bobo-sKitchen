@@ -3,30 +3,31 @@
 require_once "db.php";
 
 
-/*
-|--------------------------------------------------------------------------
-| Get review information
-|--------------------------------------------------------------------------
-*/
+/* =====================================================
+   CHECK REQUEST
+   ===================================================== */
 
-$customer_name = trim(
-    $_POST["customer_name"] ?? ""
-);
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
-$food_item = trim(
-    $_POST["food_item"] ?? ""
-);
+    die("Invalid request.");
 
-$review = trim(
-    $_POST["review"] ?? ""
-);
+}
 
 
-/*
-|--------------------------------------------------------------------------
-| Validate fields
-|--------------------------------------------------------------------------
-*/
+/* =====================================================
+   GET FORM DATA
+   ===================================================== */
+
+$customer_name = trim($_POST["customer_name"] ?? "");
+
+$food_item = trim($_POST["food_item"] ?? "");
+
+$review = trim($_POST["review"] ?? "");
+
+
+/* =====================================================
+   VALIDATE DATA
+   ===================================================== */
 
 if (
     empty($customer_name) ||
@@ -34,16 +35,14 @@ if (
     empty($review)
 ) {
 
-    die("Please complete all review fields.");
+    die("Please fill in all required fields.");
 
 }
 
 
-/*
-|--------------------------------------------------------------------------
-| Save review
-|--------------------------------------------------------------------------
-*/
+/* =====================================================
+   SAVE REVIEW
+   ===================================================== */
 
 $sql = "
     INSERT INTO reviews
@@ -52,16 +51,21 @@ $sql = "
         food_item,
         review
     )
-    VALUES
-    (
-        ?,
-        ?,
-        ?
-    )
+    VALUES (?, ?, ?)
 ";
 
 
 $stmt = $conn->prepare($sql);
+
+
+if (!$stmt) {
+
+    die(
+        "Prepare failed: " .
+        $conn->error
+    );
+
+}
 
 
 $stmt->bind_param(
@@ -72,27 +76,25 @@ $stmt->bind_param(
 );
 
 
-/*
-|--------------------------------------------------------------------------
-| Execute
-|--------------------------------------------------------------------------
-*/
-
 if ($stmt->execute()) {
+
+    /*
+       Redirect back to order page
+       after successful submission.
+    */
 
     header(
         "Location: ../order.html?review=success"
     );
 
-    exit();
+    exit;
 
 }
 
 
-echo "Unable to save your review.";
-
-
-$stmt->close();
-$conn->close();
+die(
+    "Unable to save review: " .
+    $stmt->error
+);
 
 ?>

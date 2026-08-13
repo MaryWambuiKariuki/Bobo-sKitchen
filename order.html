@@ -15,18 +15,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
 
-    <!-- External CSS -->
+    <!-- Main CSS -->
 
-    <link rel="stylesheet"
-          href="CSS file/style.css">
+    <link
+        rel="stylesheet"
+        href="CSS file/style.css"
+    >
 
 </head>
 
@@ -34,18 +40,23 @@
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+     ===================================================== -->
 
 <header class="site-header">
 
     <div class="header-container">
 
+
+        <!-- Website Name -->
+
         <h1 class="logo">
             Bobo's Kitchen
         </h1>
 
+
+        <!-- Navigation -->
 
         <nav class="navbar">
 
@@ -53,7 +64,10 @@
                 Home
             </a>
 
-            <a href="order.html" class="active">
+            <a
+                href="order.html"
+                class="active"
+            >
                 Order
             </a>
 
@@ -62,10 +76,22 @@
             </a>
 
             <a href="login.html">
-                Staff Login
+                Login
             </a>
 
         </nav>
+
+
+        <!-- Dark / Light Mode -->
+
+        <button
+            type="button"
+            id="themeToggle"
+            class="theme-button"
+        >
+            Dark Mode
+        </button>
+
 
     </div>
 
@@ -73,37 +99,43 @@
 
 
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
+<!-- =====================================================
+     MENU SECTION
+     ===================================================== -->
 
 <main>
 
 
-<!-- =========================
-     MENU SECTION
-========================= -->
+<section class="content-section">
 
-<section class="menu-section">
 
     <h2 class="page-title">
         Our Menu
     </h2>
 
+
     <p class="section-intro">
 
         Explore our delicious meals.
-        Hover over a meal to discover more about it.
+        Hover over a meal to see more information
+        and scroll down to place your dine-in order.
 
     </p>
 
 
+
+    <!-- =================================================
+         MENU CARDS
+         ================================================= -->
+
     <div class="menu-container">
 
 
-        <!-- BURGER -->
+
+        <!-- ================= BURGER ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
@@ -114,8 +146,10 @@
 
                     <div class="flip-card-front">
 
-                        <img src="images/burger.jpg"
-                             alt="Bobo's Kitchen Burger">
+                        <img
+                            src="images/burger.jpg"
+                            alt="Burger"
+                        >
 
                         <h3>
                             Burger
@@ -143,17 +177,23 @@
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 450
-                            </strong>
+                            Freshly prepared and
+                            served warm.
                         </p>
 
+                        <strong>
+                            Ksh 450
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -161,37 +201,38 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "Very delicious burger."
-                    <br>
-                    <small>- Brian</small>
-                </p>
-
-                <p>
-                    "Fresh and tasty."
-                    <br>
-                    <small>- Alice</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="Burger"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
 
 
-        <!-- PIZZA -->
+        <!-- ================= PIZZA ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
                 <div class="flip-card-inner">
 
 
+                    <!-- FRONT -->
+
                     <div class="flip-card-front">
 
-                        <img src="images/pizza.jpg.webp"
-                             alt="Bobo's Kitchen Pizza">
+                        <img
+                            src="images/pizza.jpg.webp"
+                            alt="Pizza"
+                        >
 
                         <h3>
                             Pizza
@@ -204,6 +245,8 @@
                     </div>
 
 
+                    <!-- BACK -->
+
                     <div class="flip-card-back">
 
                         <h3>
@@ -213,21 +256,27 @@
                         <p>
                             Freshly baked pizza topped
                             with rich tomato sauce,
-                            cheese and delicious toppings.
+                            melted cheese and delicious
+                            toppings.
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 850
-                            </strong>
+                            Perfect for sharing.
                         </p>
 
+                        <strong>
+                            Ksh 850
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -235,37 +284,38 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "Best pizza in town."
-                    <br>
-                    <small>- James</small>
-                </p>
-
-                <p>
-                    "Very cheesy and filling."
-                    <br>
-                    <small>- Mary</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="Pizza"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
 
 
-        <!-- FRIES -->
+        <!-- ================= FRIES ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
                 <div class="flip-card-inner">
 
 
+                    <!-- FRONT -->
+
                     <div class="flip-card-front">
 
-                        <img src="images/fries.jpg"
-                             alt="Bobo's Kitchen French Fries">
+                        <img
+                            src="images/fries.jpg"
+                            alt="French Fries"
+                        >
 
                         <h3>
                             French Fries
@@ -278,6 +328,8 @@
                     </div>
 
 
+                    <!-- BACK -->
+
                     <div class="flip-card-back">
 
                         <h3>
@@ -285,22 +337,29 @@
                         </h3>
 
                         <p>
-                            Crispy golden fries prepared
-                            fresh and served hot.
+                            Crispy golden fries
+                            seasoned with our
+                            special blend of spices.
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 250
-                            </strong>
+                            Freshly prepared
+                            for every order.
                         </p>
 
+                        <strong>
+                            Ksh 250
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -308,37 +367,38 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "Perfectly crispy."
-                    <br>
-                    <small>- Kevin</small>
-                </p>
-
-                <p>
-                    "Affordable and delicious."
-                    <br>
-                    <small>- Sarah</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="French Fries"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
 
 
-        <!-- STEAK -->
+        <!-- ================= STEAK ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
                 <div class="flip-card-inner">
 
 
+                    <!-- FRONT -->
+
                     <div class="flip-card-front">
 
-                        <img src="images/steak.jpg"
-                             alt="Bobo's Kitchen Steak">
+                        <img
+                            src="images/steak.jpg"
+                            alt="Steak"
+                        >
 
                         <h3>
                             Steak
@@ -351,6 +411,8 @@
                     </div>
 
 
+                    <!-- BACK -->
+
                     <div class="flip-card-back">
 
                         <h3>
@@ -358,23 +420,30 @@
                         </h3>
 
                         <p>
-                            Tender grilled steak with
-                            garlic-infused herbs and
-                            our special seasoning.
+                            Tender grilled steak
+                            infused with garlic,
+                            herbs and our special
+                            seasoning.
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 1200
-                            </strong>
+                            Served hot and freshly
+                            prepared.
                         </p>
 
+                        <strong>
+                            Ksh 1200
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -382,37 +451,38 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "The steak was perfectly cooked."
-                    <br>
-                    <small>- Daniel</small>
-                </p>
-
-                <p>
-                    "Loved the garlic flavour."
-                    <br>
-                    <small>- Grace</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="Steak"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
 
 
-        <!-- CHICKEN -->
+        <!-- ================= CHICKEN ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
                 <div class="flip-card-inner">
 
 
+                    <!-- FRONT -->
+
                     <div class="flip-card-front">
 
-                        <img src="images/Grilledchicken.jpg"
-                             alt="Bobo's Kitchen Chicken">
+                        <img
+                            src="images/Grilledchicken.jpg"
+                            alt="Chicken"
+                        >
 
                         <h3>
                             Chicken
@@ -425,6 +495,8 @@
                     </div>
 
 
+                    <!-- BACK -->
+
                     <div class="flip-card-back">
 
                         <h3>
@@ -432,23 +504,29 @@
                         </h3>
 
                         <p>
-                            Tender roasted chicken
-                            marinated with herbs and
-                            our special spices.
+                            Tender chicken marinated
+                            with herbs and spices
+                            before being grilled
+                            to perfection.
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 750
-                            </strong>
+                            Served fresh and hot.
                         </p>
 
+                        <strong>
+                            Ksh 750
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -456,37 +534,38 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "Very tender and flavourful."
-                    <br>
-                    <small>- John</small>
-                </p>
-
-                <p>
-                    "The seasoning was amazing."
-                    <br>
-                    <small>- Lucy</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="Chicken"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
 
 
-        <!-- PASTA -->
+        <!-- ================= PASTA ================= -->
 
         <div class="menu-card">
+
 
             <div class="flip-card">
 
                 <div class="flip-card-inner">
 
 
+                    <!-- FRONT -->
+
                     <div class="flip-card-front">
 
-                        <img src="images/pasta.jpg"
-                             alt="Bobo's Kitchen Pasta">
+                        <img
+                            src="images/pasta.jpg"
+                            alt="Pasta"
+                        >
 
                         <h3>
                             Pasta
@@ -499,6 +578,8 @@
                     </div>
 
 
+                    <!-- BACK -->
+
                     <div class="flip-card-back">
 
                         <h3>
@@ -507,22 +588,29 @@
 
                         <p>
                             Creamy pasta prepared
-                            with fresh herbs and
-                            our homemade sauce.
+                            with fresh ingredients,
+                            herbs and a delicious
+                            homemade sauce.
                         </p>
 
                         <p>
-                            <strong>
-                                Ksh 650
-                            </strong>
+                            Rich, creamy and
+                            freshly prepared.
                         </p>
 
+                        <strong>
+                            Ksh 650
+                        </strong>
+
                     </div>
+
 
                 </div>
 
             </div>
 
+
+            <!-- REVIEWS -->
 
             <div class="review-section">
 
@@ -530,19 +618,15 @@
                     Customer Reviews
                 </h4>
 
-                <p>
-                    "Creamy and delicious."
-                    <br>
-                    <small>- Peter</small>
-                </p>
-
-                <p>
-                    "One of my favourite meals."
-                    <br>
-                    <small>- Anne</small>
-                </p>
+                <div
+                    class="review-list"
+                    data-food="Pasta"
+                >
+                    Loading reviews...
+                </div>
 
             </div>
+
 
         </div>
 
@@ -553,13 +637,15 @@
 
 
 
-<!-- =========================
-     ORDER FORM
-========================= -->
+<!-- =====================================================
+     ORDER SECTION
+     ===================================================== -->
 
 <section class="form-section">
 
+
     <div class="form-card">
+
 
         <h2 class="page-title">
             Place Your Order
@@ -568,16 +654,19 @@
 
         <p class="section-intro">
 
-            Dining in? Enter your table number
-            and select your meal below.
+            Bobo's Kitchen is a dine-in restaurant.
+            Please provide your name and table number
+            when placing your order.
 
         </p>
+
 
 
         <form
             class="main-form"
             action="PHP/save_order.php"
             method="POST"
+            id="orderForm"
         >
 
 
@@ -699,41 +788,51 @@
                 Place Order
             </button>
 
+
         </form>
 
+
     </div>
+
 
 </section>
 
 
 
-<!-- =========================
-     REVIEW FORM
-========================= -->
+<!-- =====================================================
+     REVIEW SECTION
+     ===================================================== -->
 
 <section class="form-section">
 
+
     <div class="form-card">
 
+
         <h2 class="page-title">
-            Leave a Review
+            Leave A Review
         </h2>
 
 
         <p class="section-intro">
 
             Enjoyed your meal?
-            Tell us what you think.
+            Select the food item and tell us
+            what you think.
 
         </p>
+
 
 
         <form
             class="main-form"
             action="PHP/save_review.php"
             method="POST"
+            id="reviewForm"
         >
 
+
+            <!-- CUSTOMER NAME -->
 
             <label for="review_customer_name">
                 Your Name
@@ -749,7 +848,9 @@
 
 
 
-            <label for="review_food">
+            <!-- FOOD ITEM -->
+
+            <label for="review_food_item">
                 Food Item
             </label>
 
@@ -760,7 +861,7 @@
             >
 
                 <option value="">
-                    Select the food you ordered
+                    Select a food item
                 </option>
 
                 <option value="Burger">
@@ -791,6 +892,8 @@
 
 
 
+            <!-- REVIEW -->
+
             <label for="review">
                 Your Review
             </label>
@@ -799,11 +902,13 @@
                 id="review"
                 name="review"
                 rows="5"
-                placeholder="Tell us what you thought about the meal..."
+                placeholder="Tell us about your meal..."
                 required
             ></textarea>
 
 
+
+            <!-- SUBMIT -->
 
             <button
                 type="submit"
@@ -812,9 +917,12 @@
                 Submit Review
             </button>
 
+
         </form>
 
+
     </div>
+
 
 </section>
 
@@ -823,19 +931,28 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+     ===================================================== -->
 
 <footer class="site-footer">
 
     <p>
-        © 2026 Bobo's Kitchen. All Rights Reserved.
+        © 2026 Bobo's Kitchen.
+        All Rights Reserved.
     </p>
 
 </footer>
 
-<script src="Javascript/script.js"></script>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     IMPORTANT:
+     Keep this at the bottom.
+     ===================================================== -->
+
+<!-- <script src="Javascript/script.js"></script> -->
 
 
 </body>

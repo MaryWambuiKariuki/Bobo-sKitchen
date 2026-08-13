@@ -89,6 +89,32 @@ body.dark-mode {
 
 }
 
+body.dark-mode .site-header {
+    background-color: var(--card-background);
+}
+
+body.dark-mode .navbar a {
+    color: var(--text);
+}
+
+body.dark-mode .form-card,
+body.dark-mode .main-form,
+body.dark-mode .info-card,
+body.dark-mode .review-card,
+body.dark-mode .contact-card,
+body.dark-mode .flip-card-front {
+    background-color: var(--card-background);
+    color: var(--text);
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #1c1917;
+    color: var(--text);
+    border-color: var(--border);
+}
+
 
 /* =========================================================
    4. HEADER
