@@ -5,13 +5,14 @@ require_once "db.php";
 
 /*
 |--------------------------------------------------------------------------
-| Make sure the form was submitted
+| Only allow POST requests
 |--------------------------------------------------------------------------
 */
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
     header("Location: ../order.html");
+
     exit();
 
 }
@@ -19,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 /*
 |--------------------------------------------------------------------------
-| Get customer information
+| Get information from the form
 |--------------------------------------------------------------------------
 */
 
@@ -51,8 +52,14 @@ if (
 
     die("
         <h2>Order Not Submitted</h2>
-        <p>Please complete all required fields.</p>
-        <a href='../order.html'>Return to Order Page</a>
+
+        <p>
+            Please complete all required fields.
+        </p>
+
+        <a href='../order.html'>
+            Return to Order Page
+        </a>
     ");
 
 }
@@ -60,11 +67,18 @@ if (
 
 /*
 |--------------------------------------------------------------------------
-| Insert order into database
+| New orders start as Pending
 |--------------------------------------------------------------------------
 */
 
 $status = "Pending";
+
+
+/*
+|--------------------------------------------------------------------------
+| Insert order into database
+|--------------------------------------------------------------------------
+*/
 
 $sql = "INSERT INTO orders
         (
@@ -80,6 +94,32 @@ $sql = "INSERT INTO orders
 
 $stmt = $conn->prepare($sql);
 
+
+/*
+|--------------------------------------------------------------------------
+| Check whether SQL statement was prepared successfully
+|--------------------------------------------------------------------------
+*/
+
+if (!$stmt) {
+
+    die(
+        "SQL Error: " . $conn->error
+    );
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Bind values
+|--------------------------------------------------------------------------
+|
+| s = string
+| i = integer
+|
+*/
+
 $stmt->bind_param(
     "sisiss",
     $customer_name,
@@ -93,82 +133,141 @@ $stmt->bind_param(
 
 /*
 |--------------------------------------------------------------------------
-| Save order
+| Execute
 |--------------------------------------------------------------------------
 */
 
 if ($stmt->execute()) {
 
-    echo "
+?>
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 
-        <html>
+<html lang="en">
 
-        <head>
+<head>
 
-            <title>Order Submitted - Bobo's Kitchen</title>
+    <meta charset="UTF-8">
 
-            <link rel='stylesheet'
-                  href='../CSS file/style.css'>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        </head>
+    <title>Order Submitted - Bobo's Kitchen</title>
 
-        <body>
+    <link rel="stylesheet"
+          href="../CSS file/style.css">
 
-            <main>
+</head>
 
-                <section class='form-section'>
 
-                    <div class='form-card'>
+<body>
 
-                        <h2 class='page-title'>
-                            Order Submitted!
-                        </h2>
+    <main>
 
-                        <p class='section-intro'>
-                            Thank you, " . htmlspecialchars($customer_name) . ".
-                        </p>
+        <section class="form-section">
 
-                        <p>
-                            Your order has been sent to our employees.
-                        </p>
+            <div class="form-card">
 
-                        <p>
-                            <strong>Table:</strong>
-                            " . htmlspecialchars($table_number) . "
-                        </p>
+                <h2 class="page-title">
+                    Order Submitted!
+                </h2>
 
-                        <p>
-                            <strong>Food:</strong>
-                            " . htmlspecialchars($food_item) . "
-                        </p>
 
-                        <p>
-                            <strong>Quantity:</strong>
-                            " . htmlspecialchars($quantity) . "
-                        </p>
+                <p class="section-intro">
 
-                        <p>
-                            Your order is currently being prepared.
-                        </p>
+                    Thank you,
+                    <?php echo htmlspecialchars($customer_name); ?>!
 
-                        <a href='../order.html'
-                           class='btn'>
-                            Back to Menu
-                        </a>
+                </p>
 
-                    </div>
 
-                </section>
+                <p>
+                    Your order has been received
+                    by Bobo's Kitchen.
+                </p>
 
-            </main>
 
-        </body>
+                <p>
 
-        </html>
+                    <strong>
+                        Table Number:
+                    </strong>
 
-    ";
+                    <?php echo htmlspecialchars($table_number); ?>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Food:
+                    </strong>
+
+                    <?php echo htmlspecialchars($food_item); ?>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Quantity:
+                    </strong>
+
+                    <?php echo htmlspecialchars($quantity); ?>
+
+                </p>
+
+
+                <?php if (!empty($special_instructions)) { ?>
+
+                    <p>
+
+                        <strong>
+                            Special Instructions:
+                        </strong>
+
+                        <?php
+                        echo htmlspecialchars(
+                            $special_instructions
+                        );
+                        ?>
+
+                    </p>
+
+                <?php } ?>
+
+
+                <p>
+
+                    <strong>
+                        Status:
+                    </strong>
+
+                    Pending
+
+                </p>
+
+
+                <a
+                    href="../order.html"
+                    class="btn"
+                >
+                    Back to Menu
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+
+<?php
 
 } else {
 
@@ -177,7 +276,12 @@ if ($stmt->execute()) {
         <h2>Order Failed</h2>
 
         <p>
-            Something went wrong while submitting your order.
+            Something went wrong while saving your order.
+        </p>
+
+        <p>
+            Error:
+            " . htmlspecialchars($stmt->error) . "
         </p>
 
         <a href='../order.html'>
@@ -187,6 +291,7 @@ if ($stmt->execute()) {
     ";
 
 }
+
 
 $stmt->close();
 
