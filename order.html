@@ -730,19 +730,19 @@
 
         <form
             class="main-form"
-            action="#"
+            action="PHP/save_review.php"
             method="POST"
         >
 
 
-            <label for="review_name">
+            <label for="review_customer_name">
                 Your Name
             </label>
 
             <input
                 type="text"
-                id="review_name"
-                name="review_name"
+                id="review_customer_name"
+                name="customer_name"
                 placeholder="Enter your name"
                 required
             >
@@ -754,8 +754,8 @@
             </label>
 
             <select
-                id="review_food"
-                name="review_food"
+                id="review_food_item"
+                name="food_item"
                 required
             >
 
@@ -799,7 +799,7 @@
                 id="review"
                 name="review"
                 rows="5"
-                placeholder="Write your review here..."
+                placeholder="Tell us what you thought about the meal..."
                 required
             ></textarea>
 
