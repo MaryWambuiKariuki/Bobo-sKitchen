@@ -1052,3 +1052,50 @@ th {
     }
 
 }
+
+/* =========================================================
+   CUSTOMER REVIEWS
+========================================================= */
+
+.food-reviews {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--card-bg);
+}
+
+
+.food-reviews h4 {
+    margin-bottom: 12px;
+}
+
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.review-box {
+    padding: 12px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    background: var(--input-bg);
+    transition: transform 0.3s ease;
+}
+
+
+.review-box:hover {
+    transform: translateX(5px);
+}
+
+
+.review-box p {
+    margin-bottom: 5px;
+}
+
+
+.review-box strong {
+    font-size: 0.9rem;
+}

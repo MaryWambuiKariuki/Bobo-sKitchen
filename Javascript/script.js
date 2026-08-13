@@ -407,4 +407,136 @@ if (reviewForm) {
         }
     );
 
+    /*
+|--------------------------------------------------------------------------
+| LOAD FOOD REVIEWS
+|--------------------------------------------------------------------------
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const reviewContainers =
+            document.querySelectorAll(
+                ".review-list"
+            );
+
+
+        reviewContainers.forEach(
+            function (container) {
+
+                const foodItem =
+                    container.id.replace(
+                        "reviews-",
+                        ""
+                    );
+
+
+                fetch(
+                    "PHP/get_reviews.php?food_item=" +
+                    encodeURIComponent(foodItem)
+                )
+
+                .then(
+                    function (response) {
+
+                        return response.json();
+
+                    }
+                )
+
+                .then(
+                    function (reviews) {
+
+                        container.innerHTML = "";
+
+
+                        if (
+                            reviews.length === 0
+                        ) {
+
+                            container.innerHTML =
+                                "<p>No reviews yet.</p>";
+
+                            return;
+
+                        }
+
+
+                        reviews.forEach(
+                            function (review) {
+
+                                const reviewBox =
+                                    document.createElement(
+                                        "div"
+                                    );
+
+
+                                reviewBox.className =
+                                    "review-box";
+
+
+                                reviewBox.innerHTML =
+
+                                    "<p>\"" +
+                                    escapeHTML(
+                                        review.review
+                                    ) +
+                                    "\"</p>" +
+
+                                    "<strong>- " +
+                                    escapeHTML(
+                                        review.customer_name
+                                    ) +
+                                    "</strong>";
+
+
+                                container.appendChild(
+                                    reviewBox
+                                );
+
+                            }
+                        );
+
+                    }
+                )
+
+                .catch(
+                    function (error) {
+
+                        console.error(
+                            "Error loading reviews:",
+                            error
+                        );
+
+                        container.innerHTML =
+                            "<p>Unable to load reviews.</p>";
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| PREVENT HTML INJECTION
+|--------------------------------------------------------------------------
+*/
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
 }
