@@ -1,12 +1,123 @@
-/* ==============================
-   HOME PAGE
-============================== */
+/* =========================================================
+   BOBO'S KITCHEN
+   MAIN EXTERNAL STYLESHEET
+   ========================================================= */
 
-.welcome-section {
-    padding: 30px 0;
+
+/* =========================================================
+   1. GENERAL SETTINGS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.welcome-container {
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: #fffaf3;
+
+    color: #2d2d2d;
+
+    line-height: 1.6;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================================================
+   2. COLOUR VARIABLES
+   ========================================================= */
+
+:root {
+
+    --primary: #b45309;
+
+    --primary-dark: #78350f;
+
+    --secondary: #f59e0b;
+
+    --background: #fffaf3;
+
+    --card-background: #ffffff;
+
+    --text: #2d2d2d;
+
+    --border: #eadcc8;
+
+    --shadow: rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* =========================================================
+   3. DARK MODE
+   ========================================================= */
+
+body.dark-mode {
+
+    --primary: #f59e0b;
+
+    --primary-dark: #fbbf24;
+
+    --secondary: #f59e0b;
+
+    --background: #1c1917;
+
+    --card-background: #292524;
+
+    --text: #f5f5f4;
+
+    --border: #57534e;
+
+    --shadow: rgba(0, 0, 0, 0.40);
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.site-header {
+
+    background-color: var(--card-background);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow:
+        0 2px 8px var(--shadow);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.header-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 15px 25px;
 
     display: flex;
 
@@ -14,121 +125,273 @@
 
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 20px;
 
-    background: var(--card);
+}
+
+
+.logo {
+
+    color: var(--primary);
+
+    font-size: 1.7rem;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   5. NAVIGATION BAR
+   CSS FLEXBOX
+   ========================================================= */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.navbar a {
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.navbar a:hover {
+
+    background-color: var(--primary);
+
+    color: white;
+
+}
+
+
+.navbar a.active {
+
+    background-color: var(--primary);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   6. THEME BUTTON
+   ========================================================= */
+
+.theme-button {
+
+    border: none;
+
+    background-color: var(--primary);
+
+    color: white;
+
+    padding: 9px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.3s ease;
+
+}
+
+
+.theme-button:hover {
+
+    background-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   7. HERO SECTION
+   ========================================================= */
+
+.hero {
+
+    max-width: 1200px;
+
+    margin: 40px auto;
 
     padding: 30px;
 
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+.hero-content {
+
+    text-align: center;
+
+}
+
+
+.hero-content h2 {
+
+    color: var(--primary);
+
+    font-size: 2.3rem;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero-content p {
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
     border-radius: 12px;
 
-    box-shadow: 0 4px 15px var(--shadow);
+    box-shadow:
+        0 8px 20px var(--shadow);
+
 }
 
-.welcome-text {
 
-    flex: 1;
+/* =========================================================
+   8. GENERAL SECTIONS
+   ========================================================= */
 
-    text-align: left;
+.content-section {
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
 }
 
-.welcome-text h2 {
 
-    text-align: left;
+.page-title {
+
+    text-align: center;
 
     color: var(--primary);
 
     margin-bottom: 20px;
+
 }
 
-.welcome-text p {
 
-    margin-bottom: 15px;
-}
-
-.welcome-image {
-
-    flex: 1;
+.section-intro {
 
     text-align: center;
-}
 
-.welcome-image img {
+    margin-bottom: 25px;
 
-    width: 100%;
-
-    max-width: 500px;
-
-    border-radius: 12px;
-
-    transition: 0.4s;
-}
-
-.welcome-image img:hover {
-
-    transform: scale(1.03);
 }
 
 
-/* ==============================
-   HOME BUTTON
-============================== */
+/* =========================================================
+   9. BUTTONS
+   ========================================================= */
 
-.home-button {
+.btn {
 
     display: inline-block;
 
-    margin-top: 15px;
+    border: none;
 
-    padding: 12px 25px;
-
-    background: var(--primary);
+    background-color: var(--primary);
 
     color: white;
 
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
     text-decoration: none;
 
-    border-radius: 7px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
-    transition: 0.3s;
-}
-
-.home-button:hover {
-
-    background: var(--secondary);
-
-    transform: translateY(-3px);
 }
 
 
-/* ==============================
-   WHY CHOOSE US
-============================== */
+.btn:hover {
 
-.why-us-section {
+    background-color: var(--primary-dark);
 
-    padding: 30px 0;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px var(--shadow);
+
 }
 
-.why-us-section > h2 {
 
-    color: var(--primary);
+/* =========================================================
+   10. INFORMATION CARDS
+   ========================================================= */
 
-    margin-bottom: 30px;
-}
-
-.features-container {
+.card-container {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 20px;
+
 }
 
-.feature-card {
 
-    background: var(--card);
+.info-card {
+
+    background-color: var(--card-background);
+
+    border: 1px solid var(--border);
 
     padding: 25px;
 
@@ -136,277 +399,656 @@
 
     text-align: center;
 
-    box-shadow: 0 4px 12px var(--shadow);
+    box-shadow:
+        0 5px 15px var(--shadow);
 
-    transition: 0.3s;
-}
+    transition:
+        transform 0.3s ease;
 
-.feature-card:hover {
-
-    transform: translateY(-6px);
-}
-
-.feature-card h3 {
-
-    color: var(--primary);
-
-    margin-bottom: 10px;
 }
 
 
-/* ==============================
-   SERVICES
-============================== */
-
-.services-section {
-
-    padding: 30px 0;
-}
-
-.content-card {
-
-    background: var(--card);
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px var(--shadow);
-
-    margin-bottom: 30px;
-}
-
-.content-card h2 {
-
-    color: var(--primary);
-
-    margin-bottom: 25px;
-}
-
-.services-list {
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.service-item {
-
-    padding: 20px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-.service-item:hover {
+.info-card:hover {
 
     transform: translateY(-5px);
 
-    border-color: var(--secondary);
 }
 
-.service-item h3 {
+
+.info-card h3 {
 
     color: var(--primary);
 
     margin-bottom: 10px;
+
 }
 
 
-/* ==============================
-   HOME CALL TO ACTION
-============================== */
+/* =========================================================
+   11. LISTS
+   ========================================================= */
 
-.home-cta {
+.styled-list {
 
-    background: var(--primary);
+    max-width: 500px;
+
+    margin: auto;
+
+    padding-left: 25px;
+
+}
+
+
+.styled-list li {
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================================================
+   12. MENU
+   ========================================================= */
+
+.menu-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   13. CSS FLIP CARDS
+   ========================================================= */
+
+.flip-card {
+
+    background-color: transparent;
+
+    width: 100%;
+
+    height: 350px;
+
+    perspective: 1000px;
+
+}
+
+
+.flip-card-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition:
+        transform 0.7s;
+
+    transform-style: preserve-3d;
+
+}
+
+
+.flip-card:hover
+.flip-card-inner {
+
+    transform: rotateY(180deg);
+
+}
+
+
+.flip-card-front,
+.flip-card-back {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+
+}
+
+
+.flip-card-front {
+
+    background-color: var(--card-background);
+
+    text-align: center;
+
+}
+
+
+.flip-card-front img {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+}
+
+
+.flip-card-front h3 {
+
+    color: var(--primary);
+
+    margin-top: 10px;
+
+}
+
+
+.flip-card-back {
+
+    background-color: var(--primary);
 
     color: white;
 
+    transform: rotateY(180deg);
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
     text-align: center;
 
-    padding: 40px 20px;
-
-    border-radius: 12px;
-
-    margin: 30px 0;
 }
 
-.home-cta h2 {
 
-    margin-bottom: 10px;
-}
-
-.home-cta p {
+.flip-card-back h3 {
 
     margin-bottom: 15px;
+
 }
 
 
-/* ==============================
-   CONTACT PAGE
-============================== */
+/* =========================================================
+   14. FORMS
+   ========================================================= */
 
-.page-title {
+.form-section {
 
-    text-align: center;
+    max-width: 650px;
 
-    margin-bottom: 30px;
-}
-
-.page-title h2 {
-
-    color: var(--primary);
-
-    margin-bottom: 10px;
-}
-
-
-/* ==============================
-   CONTACT DETAILS
-============================== */
-
-.contact-details {
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.contact-item {
-
-    text-align: center;
+    margin: 50px auto;
 
     padding: 20px;
 
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
-    transition: 0.3s;
 }
 
-.contact-item:hover {
 
-    transform: translateY(-5px);
+.form-card {
 
-    border-color: var(--secondary);
+    background-color: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 20px var(--shadow);
+
 }
 
-.contact-item h3 {
+
+.main-form {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    background-color: var(--card-background);
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+
+}
+
+
+.main-form label,
+.form-card label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-weight: 500;
+
+}
+
+
+.main-form input,
+.main-form select,
+.main-form textarea,
+.form-card input,
+.form-card select,
+.form-card textarea {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.main-form input:focus,
+.main-form select:focus,
+.main-form textarea:focus,
+.form-card input:focus,
+.form-card select:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(180, 83, 9, 0.15);
+
+}
+
+
+.main-form .btn,
+.form-card .btn {
+
+    margin-top: 20px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   15. FORM LINKS
+   ========================================================= */
+
+.form-link {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+
+.form-link a {
 
     color: var(--primary);
 
-    margin-bottom: 8px;
+    font-weight: 600;
+
+    text-decoration: none;
+
 }
 
 
-/* ==============================
-   OPENING HOURS TABLE
-============================== */
+.form-link a:hover {
 
-.hours-table {
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   16. REVIEWS
+   ========================================================= */
+
+.review-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.review-card {
+
+    background-color: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+
+}
+
+
+.review-card h3 {
+
+    color: var(--primary);
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================================================
+   17. CONTACT
+   ========================================================= */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.contact-card {
+
+    background-color: var(--card-background);
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+
+}
+
+
+.contact-card h3 {
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   18. TABLE
+   ========================================================= */
+
+table {
 
     width: 100%;
 
     border-collapse: collapse;
 
-    margin-top: 20px;
 }
 
-.hours-table th {
 
-    background: var(--primary);
+th,
+td {
 
-    color: white;
+    padding: 10px;
 
-    padding: 14px;
-}
-
-.hours-table td {
-
-    padding: 14px;
+    border: 1px solid var(--border);
 
     text-align: center;
 
-    border: 1px solid #ddd;
-}
-
-.hours-table tr:hover {
-
-    background: rgba(212, 160, 23, 0.1);
 }
 
 
-/* ==============================
-   RESPONSIVE HOME & CONTACT
-============================== */
+th {
+
+    background-color: var(--primary);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   19. JAVASCRIPT CONTENT
+   ========================================================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+#additionalInformation {
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+    max-width: 700px;
+
+    background-color: var(--card-background);
+
+    border-left:
+        4px solid var(--primary);
+
+    border-radius: 6px;
+
+}
+
+
+/* Confirmation */
+
+.confirmation-message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background-color: #e8f7ec;
+
+    color: #176b2c;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+}
+
+
+.confirmation-message.show {
+
+    display: block;
+
+}
+
+
+/* Form errors */
+
+.form-error {
+
+    color: #b00020;
+
+    background-color: #ffe5e5;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+}
+
+
+.input-error {
+
+    border:
+        2px solid #b00020 !important;
+
+}
+
+
+/* =========================================================
+   20. FOOTER
+   ========================================================= */
+
+.site-footer {
+
+    margin-top: 50px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: var(--primary-dark);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   21. RESPONSIVE DESIGN
+   ========================================================= */
 
 @media (max-width: 900px) {
 
-    .welcome-container {
+    .header-container {
 
         flex-direction: column;
 
-        text-align: center;
     }
 
-    .welcome-text {
 
-        text-align: center;
-    }
-
-    .welcome-text h2 {
-
-        text-align: center;
-    }
-
-    .features-container {
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .services-list {
+    .hero {
 
         grid-template-columns: 1fr;
+
     }
 
-    .contact-details {
 
-        grid-template-columns: 1fr;
+    .menu-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
+
+
+    .card-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .review-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
 }
 
 
 @media (max-width: 600px) {
 
-    .features-container {
+    .navbar {
+
+        flex-direction: column;
+
+    }
+
+
+    .menu-container {
 
         grid-template-columns: 1fr;
+
     }
 
-    .welcome-container {
+
+    .card-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .review-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero {
+
+        padding: 15px;
+
+    }
+
+
+    .content-section {
 
         padding: 20px;
-    }
 
-    .content-card {
-
-        padding: 20px;
-    }
-
-    .hours-table {
-
-        font-size: 14px;
     }
 
 }
