@@ -1,99 +1,392 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Bobo's Kitchen - Contact Us</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="CSS file/style.css">
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- External CSS -->
+
+    <link rel="stylesheet"
+          href="CSS file/style.css">
+
 </head>
+
 
 <body>
 
-    <h1>Contact Us</h1>
 
-    <hr>
+    <!-- ==============================
+         HEADER
+    =============================== -->
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="menu.html">Menu</a> |
-        <a href="order.html">Order</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
+    <header class="site-header">
 
-    <hr>
+        <div class="header-container">
 
-    <h2>Restaurant Information</h2>
+            <h1>
+                Bobo's Kitchen
+            </h1>
 
-    <p>
-        <strong>Phone:</strong> +254 700 123 456
-    </p>
 
-    <p>
-        <strong>Email:</strong> info@boboskitchen.com
-    </p>
+            <!-- Navigation -->
 
-    <p>
-        <strong>Location:</strong> Nairobi, Kenya
-    </p>
+            <nav class="navbar">
 
-    <h2>Send Us a Message</h2>
+                <a href="index.html">
+                    Home
+                </a>
 
-    <form>
+                <a href="order.html">
+                    Order
+                </a>
 
-        <label>Full Name:</label>
-        <br>
-        <input type="text">
-        <br><br>
+                <a href="gallery.html">
+                    Gallery
+                </a>
 
-        <label>Email:</label>
-        <br>
-        <input type="email">
-        <br><br>
+                <a href="contact.html">
+                    Contact
+                </a>
 
-        <label>Message:</label>
-        <br>
+                <a href="login.html">
+                    Login
+                </a>
 
-        <textarea rows="6" cols="40"></textarea>
 
-        <br><br>
+                <!-- Dark Mode -->
 
-        <button type="submit">
-            Send Message
-        </button>
+                <button id="themeToggle">
+                    🌙 Dark Mode
+                </button>
 
-    </form>
+            </nav>
 
-    <hr>
+        </div>
 
-    <h3>Opening Hours</h3>
+    </header>
 
-    <table border="1" cellpadding="10">
 
-        <tr>
-            <th>Day</th>
-            <th>Hours</th>
-        </tr>
 
-        <tr>
-            <td>Monday - Friday</td>
-            <td>8:00 AM - 10:00 PM</td>
-        </tr>
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
 
-        <tr>
-            <td>Saturday</td>
-            <td>9:00 AM - 11:00 PM</td>
-        </tr>
+    <main class="main-content">
 
-        <tr>
-            <td>Sunday</td>
-            <td>10:00 AM - 8:00 PM</td>
-        </tr>
 
-    </table>
+        <!-- Page Title -->
+
+        <section class="page-title">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                We would love to hear from you.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==============================
+             CONTACT INFORMATION
+        =============================== -->
+
+        <section class="contact-information">
+
+            <div class="content-card">
+
+                <h2>
+                    Restaurant Information
+                </h2>
+
+
+                <div class="contact-details">
+
+
+                    <div class="contact-item">
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+                            +254 700 123 456
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <h3>
+                            Email
+                        </h3>
+
+                        <p>
+                            info@boboskitchen.com
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            Nairobi, Kenya
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             CONTACT FORM
+        =============================== -->
+
+        <section class="contact-form-section">
+
+            <div class="form-container">
+
+                <h2>
+                    Send Us a Message
+                </h2>
+
+
+                <p class="form-introduction">
+
+                    Have a question or suggestion?
+                    Send us a message.
+
+                </p>
+
+
+                <form class="contact-form">
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="contact-name">
+
+                            Full Name:
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="contact-name"
+                            name="contact-name"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="contact-email">
+
+                            Email:
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="contact-email"
+                            name="contact-email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- Message -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+
+                            Message:
+
+                        </label>
+
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message here..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="form-button">
+
+                        Send Message
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             OPENING HOURS
+        =============================== -->
+
+        <section class="opening-hours">
+
+            <div class="content-card">
+
+                <h2>
+                    Opening Hours
+                </h2>
+
+
+                <table class="hours-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Day
+                            </th>
+
+                            <th>
+                                Hours
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Monday - Friday
+                            </td>
+
+                            <td>
+                                8:00 AM - 10:00 PM
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Saturday
+                            </td>
+
+                            <td>
+                                9:00 AM - 11:00 PM
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Sunday
+                            </td>
+
+                            <td>
+                                10:00 AM - 8:00 PM
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Bobo's Kitchen.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
 
 </body>
 

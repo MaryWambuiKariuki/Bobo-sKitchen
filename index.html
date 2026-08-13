@@ -1,88 +1,361 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bobo's Kitchen - Home</title>
+
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<link rel="stylesheet" href="CSS file/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="CSS file/style.css">
+
 </head>
+
 
 <body>
 
-<header>
-    <center><h1>Bobo's Kitchen</h1></center>
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="order.html">Order</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="login.html">Login</a>
-    </nav>
-</header>
+    <!-- ==============================
+         HEADER
+    =============================== -->
 
-<hr>
+    <header class="site-header">
 
-<section>
+        <div class="header-container">
 
-   <h2 align="center">Welcome to Bobo's Kitchen</h2>
+            <h1>Bobo's Kitchen</h1>
 
-    <p>
-        Welcome to <strong>Bobo's Kitchen</strong>, where delicious meals are prepared
-        fresh every day. We are committed to providing quality food,
-        excellent customer service and an enjoyable dining experience.
-        Feel free to inquire from our amiable employees.
-        We treat our customers as our family. 
-    </p>
 
-    <img src="images\restaurant.jpeg"
-        alt="Restaurant"
-        width="500">
+            <!-- Navigation -->
 
-</section>
+            <nav class="navbar">
 
-<hr>
+                <a href="index.html">
+                    Home
+                </a>
 
-<section>
+                <a href="order.html">
+                    Order
+                </a>
 
-    <h2>Why Choose Us?</h2>
+                <a href="gallery.html">
+                    Gallery
+                </a>
 
-    <ol>
-        <li>Fresh Ingredients</li>
-        <li>Affordable Prices</li>
-        <li>Fast Service</li>
-        <li>Friendly Staff</li>
-    </ol>
+                <a href="contact.html">
+                    Contact
+                </a>
 
-</section>
+                <a href="login.html">
+                    Login
+                </a>
 
-<hr>
 
-<section>
+                <!-- Dark Mode -->
 
-    <h2>Services Offered</h2>
+                <button id="themeToggle">
+                    🌙 Dark Mode
+                </button>
 
-    <ul>
-        <li>Dine In</li>
-        <li>Take Away</li>
-        <li>Meeting spot</li>
-    </ul>
+            </nav>
 
-</section>
+        </div>
 
-<hr>
+    </header>
 
-<footer>
-    <p align="center">
-        © 2026 Bobo's Kitchen. All Rights Reserved.
-    </p></centre>
-</footer>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="main-content">
+
+
+        <!-- Welcome Section -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-container">
+
+
+                <div class="welcome-text">
+
+                    <h2>
+                        Welcome to Bobo's Kitchen
+                    </h2>
+
+
+                    <p>
+
+                        Welcome to
+                        <strong>Bobo's Kitchen</strong>,
+                        where delicious meals are prepared
+                        fresh every day.
+
+                    </p>
+
+
+                    <p>
+
+                        We are committed to providing quality
+                        food, excellent customer service and
+                        an enjoyable dining experience.
+
+                    </p>
+
+
+                    <p>
+
+                        Feel free to inquire from our friendly
+                        employees. We treat our customers
+                        like family.
+
+                    </p>
+
+
+                    <a href="order.html"
+                       class="home-button">
+
+                        View Our Menu
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="welcome-image">
+
+                    <img
+                        src="images/restaurant.jpeg"
+                        alt="Inside Bobo's Kitchen restaurant">
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             WHY CHOOSE US
+        =============================== -->
+
+        <section class="why-us-section">
+
+            <h2>
+                Why Choose Us?
+            </h2>
+
+
+            <div class="features-container">
+
+
+                <!-- Feature 1 -->
+
+                <div class="feature-card">
+
+                    <h3>
+                        Fresh Ingredients
+                    </h3>
+
+                    <p>
+                        We prepare our meals using
+                        fresh and quality ingredients.
+                    </p>
+
+                </div>
+
+
+                <!-- Feature 2 -->
+
+                <div class="feature-card">
+
+                    <h3>
+                        Affordable Prices
+                    </h3>
+
+                    <p>
+                        Enjoy delicious meals at
+                        affordable prices.
+                    </p>
+
+                </div>
+
+
+                <!-- Feature 3 -->
+
+                <div class="feature-card">
+
+                    <h3>
+                        Fast Service
+                    </h3>
+
+                    <p>
+                        Our staff work hard to ensure
+                        that your meals are prepared
+                        and served on time.
+                    </p>
+
+                </div>
+
+
+                <!-- Feature 4 -->
+
+                <div class="feature-card">
+
+                    <h3>
+                        Friendly Staff
+                    </h3>
+
+                    <p>
+                        Our friendly employees are
+                        always ready to assist you.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             SERVICES
+        =============================== -->
+
+        <section class="services-section">
+
+            <div class="content-card">
+
+                <h2>
+                    Services Offered
+                </h2>
+
+
+                <div class="services-list">
+
+                    <div class="service-item">
+
+                        <h3>
+                            Dine In
+                        </h3>
+
+                        <p>
+                            Enjoy your meal in our
+                            comfortable restaurant
+                            environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <h3>
+                            Meeting Spot
+                        </h3>
+
+                        <p>
+                            Our restaurant provides
+                            a comfortable environment
+                            for meetings and gatherings.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <h3>
+                            Quality Meals
+                        </h3>
+
+                        <p>
+                            We serve a variety of
+                            freshly prepared meals
+                            for our customers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             CALL TO ACTION
+        =============================== -->
+
+        <section class="home-cta">
+
+            <h2>
+                Ready to Enjoy a Meal?
+            </h2>
+
+            <p>
+                Visit Bobo's Kitchen and enjoy
+                a delicious dining experience.
+            </p>
+
+
+            <a href="order.html"
+               class="home-button">
+
+                View Menu & Order
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Bobo's Kitchen.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
 
 </body>
 
