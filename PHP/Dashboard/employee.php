@@ -168,7 +168,7 @@ $username = $_SESSION["username"] ?? "Employee";
                 <!-- CHECK IN -->
 
                 <form
-                    action="attendance.php"
+                    action="../attendance.php"
                     method="POST"
                 >
 
@@ -192,7 +192,7 @@ $username = $_SESSION["username"] ?? "Employee";
                 <!-- CHECK OUT -->
 
                 <form
-                    action="attendance.php"
+                    action="../attendance.php"
                     method="POST"
                 >
 
