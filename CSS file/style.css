@@ -1,288 +1,411 @@
-/* ------------------------
-   GOOGLE FONT & RESET
--------------------------*/
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ==============================
+   GENERAL CONTENT
+============================== */
+
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
-:root{
-    --bg:#FDFBF7;
-    --card:#ffffff;
-    --text:#333333;
-    --primary:#8B1E3F;
-    --secondary:#D4A017;
-    --shadow:rgba(0,0,0,.15);
+.section-introduction {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text);
 }
 
-body.dark{
-    --bg:#1E1E1E;
-    --card:#2C2C2C;
-    --text:#F5F5F5;
-    --primary:#D4A017;
-    --secondary:#8B1E3F;
-}
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    transition:.4s;
-}
-
-/* ------------------------
+/* ==============================
    HEADER
--------------------------*/
+============================== */
 
-header{
-    background:var(--primary);
-    padding:20px;
-    text-align:center;
-    color:white;
+.site-header {
+    background: var(--primary);
+    color: white;
+    padding: 20px 0;
 }
 
-header h1{
-    margin-bottom:15px;
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
 }
 
-/* ------------------------
+.site-header h1 {
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
    NAVIGATION
--------------------------*/
+============================== */
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    padding:10px 16px;
-    border-radius:8px;
-    transition:.3s;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-nav a:hover{
-    background:var(--secondary);
-    transform:translateY(-3px);
+.navbar a:hover {
+    background: var(--secondary);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* ------------------------
-   TITLES
--------------------------*/
 
-h1,h2,h3{
-    text-align:center;
-    margin:20px 0;
+/* ==============================
+   MENU SECTION
+============================== */
+
+.menu-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
 }
 
-/* ------------------------
-   CONTENT CARDS
--------------------------*/
 
-.card{
-    width:85%;
-    margin:25px auto;
-    padding:20px;
-    background:var(--card);
-    border-radius:12px;
-    box-shadow:0 4px 12px var(--shadow);
+/* ==============================
+   MENU CARDS
+============================== */
+
+.menu-card {
+    background: var(--card);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px var(--shadow);
+
+    transition: 0.3s;
+
+    text-align: center;
 }
 
-/* ------------------------
-   MENU IMAGES
--------------------------*/
+.menu-card:hover {
+    transform: translateY(-8px);
 
-.food-image{
-    width:250px;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
-    display:block;
-    margin:15px auto;
-    transition:.4s;
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
-.food-image:hover{
-    transform:scale(1.05);
+
+.menu-card img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
 }
 
-/* ------------------------
-   BUTTONS
--------------------------*/
 
-button{
-    background:var(--primary);
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    transition:.3s;
+.menu-card-content {
+    padding: 20px;
 }
 
-button:hover{
-    background:var(--secondary);
-    transform:scale(1.05);
+
+.menu-card h3 {
+    margin: 5px 0 10px;
 }
 
-/* ------------------------
+
+.menu-card .price {
+    color: var(--secondary);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.menu-card p {
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   REVIEWS ON MENU CARDS
+============================== */
+
+.reviews {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+}
+
+.reviews h4 {
+    color: var(--primary);
+
+    margin-bottom: 10px;
+}
+
+.reviews p {
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* ==============================
    FORMS
--------------------------*/
+============================== */
 
-form{
-    width:65%;
-    margin:30px auto;
-    padding:25px;
-    background:var(--card);
-    border-radius:12px;
-    box-shadow:0 4px 12px var(--shadow);
+.form-container {
+    width: 65%;
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px var(--shadow);
 }
 
-label{
-    font-weight:bold;
+.form-container h2 {
+    text-align: center;
+
+    color: var(--primary);
+
+    margin-bottom: 10px;
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:10px;
-    margin:8px 0 18px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:15px;
+
+.form-introduction {
+    text-align: center;
+
+    margin-bottom: 25px;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-    border:2px solid var(--secondary);
-    outline:none;
+
+.form-group {
+    margin-bottom: 20px;
 }
 
-/* ------------------------
-   TABLES
--------------------------*/
 
-table{
-    width:80%;
-    margin:auto;
-    border-collapse:collapse;
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
 }
 
-th{
-    background:var(--primary);
-    color:white;
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    transition: 0.3s;
 }
 
-th,td{
-    border:1px solid #ccc;
-    padding:12px;
-    text-align:center;
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border: 2px solid var(--secondary);
+
+    box-shadow: 0 0 5px rgba(212, 160, 23, 0.3);
 }
 
-/* ------------------------
-   GALLERY FLIP CARDS
--------------------------*/
 
-.gallery{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin:40px;
+/* ==============================
+   FORM BUTTON
+============================== */
+
+.form-button {
+
+    display: block;
+
+    margin: 10px auto 0;
+
+    padding: 12px 30px;
+
+    background: var(--primary);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    transition: 0.3s;
 }
 
-.flip-card{
-    width:250px;
-    height:300px;
-    perspective:1000px;
+
+.form-button:hover {
+
+    background: var(--secondary);
+
+    transform: translateY(-2px);
 }
 
-.flip-card-inner{
-    width:100%;
-    height:100%;
-    transition:transform .7s;
-    transform-style:preserve-3d;
+
+/* ==============================
+   FORM FOOTER
+============================== */
+
+.form-footer {
+
+    text-align: center;
+
+    margin-top: 20px;
 }
 
-.flip-card:hover .flip-card-inner{
-    transform:rotateY(180deg);
+.form-footer a {
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    text-decoration: none;
 }
 
-.flip-front,
-.flip-back{
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:12px;
-    overflow:hidden;
-    backface-visibility:hidden;
-    box-shadow:0 5px 12px var(--shadow);
+.form-footer a:hover {
+
+    color: var(--secondary);
+
+    text-decoration: underline;
 }
 
-.flip-front img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
 
-.flip-back{
-    background:var(--primary);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    transform:rotateY(180deg);
-    text-align:center;
-    padding:15px;
-}
-
-/* ------------------------
+/* ==============================
    FOOTER
--------------------------*/
+============================== */
 
-footer{
-    background:var(--primary);
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+.site-footer {
+
+    background: var(--primary);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
 }
 
-/* ------------------------
+
+/* ==============================
    DARK MODE BUTTON
--------------------------*/
+============================== */
 
-#themeToggle{
-    margin-left:20px;
+#themeToggle {
+
+    background: var(--secondary);
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    transition: 0.3s;
 }
 
-/* ------------------------
-   RESPONSIVE
--------------------------*/
 
-@media(max-width:768px){
+#themeToggle:hover {
 
-    nav{
-        flex-direction:column;
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 900px) {
+
+    .menu-container {
+
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    form{
-        width:90%;
+    .form-container {
+
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .menu-container {
+
+        grid-template-columns: 1fr;
     }
 
-    table{
-        width:95%;
+    .form-container {
+
+        width: 95%;
+
+        padding: 20px;
     }
 
-    .card{
-        width:95%;
+    .navbar {
+
+        flex-direction: column;
+    }
+
+    .main-content {
+
+        padding: 20px 10px;
     }
 }

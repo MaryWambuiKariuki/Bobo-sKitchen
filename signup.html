@@ -1,87 +1,184 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sign Up - Bobo's Kitchen</title>
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS file/style.css">
 </head>
 
 <body>
 
-<h1 align="center">Bobo's Kitchen</h1>
+    <!-- Header -->
+    <header class="site-header">
 
-<nav align="center">
-    <a href="index.html">Home</a> |
-    <a href="order.html">Order</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+        <div class="header-container">
 
-<hr>
+            <h1>Bobo's Kitchen</h1>
 
-<h2 align="center">Create Staff Account</h2>
+            <nav class="navbar">
 
-<form align="center">
+                <a href="index.html">Home</a>
+                <a href="order.html">Order</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
 
-    <label>Full Name:</label>
-    <br>
-    <input type="text">
+                <button id="themeToggle">🌙 Dark Mode</button>
 
-    <br><br>
+            </nav>
 
-    <label>Username:</label>
-    <br>
-    <input type="text">
+        </div>
 
-    <br><br>
+    </header>
 
-    <label>Email:</label>
-    <br>
-    <input type="email">
 
-    <br><br>
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <label>Password:</label>
-    <br>
-    <input type="password">
+        <section class="signup-section">
 
-    <br><br>
+            <div class="form-container">
 
-    <label>Confirm Password:</label>
-    <br>
-    <input type="password">
+                <h2>Create Staff Account</h2>
 
-    <br><br>
+                <p class="form-introduction">
+                    Create an account to access Bobo's Kitchen staff services.
+                </p>
 
-    <label>Role:</label>
-    <br>
 
-    <select>
-        <option>Employee</option>
-        <option>Employer</option>
-    </select>
+                <form class="staff-form">
 
-    <br><br>
+                    <div class="form-group">
 
-    <button type="submit">
-        Create Account
-    </button>
+                        <label for="fullname">Full Name:</label>
 
-</form>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Enter your full name"
+                            required>
 
-<hr>
+                    </div>
 
-<p align="center">
-    Already have an account?
-    <a href="login.html">Login Here</a>
-</p>
+
+                    <div class="form-group">
+
+                        <label for="signup-username">Username:</label>
+
+                        <input
+                            type="text"
+                            id="signup-username"
+                            name="username"
+                            placeholder="Choose a username"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signup-email">Email Address:</label>
+
+                        <input
+                            type="email"
+                            id="signup-email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signup-password">Password:</label>
+
+                        <input
+                            type="password"
+                            id="signup-password"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirm-password">Confirm Password:</label>
+
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm-password"
+                            placeholder="Confirm your password"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="staff-role">Role:</label>
+
+                        <select id="staff-role" name="role">
+
+                            <option value="employee">Employee</option>
+                            <option value="employer">Employer</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit" class="form-button">
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <div class="form-footer">
+
+                    <p>
+                        Already have an account?
+                        <a href="login.html">Login Here</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Bobo's Kitchen. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 
