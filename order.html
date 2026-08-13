@@ -2,540 +2,646 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Order - Bobo's Kitchen</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Bobo's Kitchen - Order</title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
-    <!-- External CSS -->
+
     <link rel="stylesheet" href="CSS file/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="header-container">
+    <div class="header-container">
 
-            <h1>Bobo's Kitchen</h1>
+        <h1 class="logo">
+            Bobo's Kitchen
+        </h1>
 
-            <nav class="navbar">
 
-                <a href="index.html">Home</a>
-                <a href="order.html">Order</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-                <a href="login.html">Login</a>
+        <nav class="navbar">
 
-                <button id="themeToggle">🌙 Dark Mode</button>
+            <a href="index.html">
+                Home
+            </a>
 
-            </nav>
+            <a href="order.html"
+               class="active">
+                Order
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Staff Login
+            </a>
+
+        </nav>
+
+
+        <button id="themeToggle"
+                class="theme-button">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="content-section">
+
+        <h2 class="page-title">
+            Our Menu
+        </h2>
+
+
+        <p class="section-intro">
+
+            Explore our meals and hover over a
+            meal to learn more.
+
+        </p>
+
+
+        <!-- MENU -->
+
+        <div class="menu-container">
+
+
+            <!-- STEAK -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/steak.jpg"
+                             alt="Garlic Infused Steak">
+
+                        <h3>
+                            Garlic Infused Steak
+                        </h3>
+
+                        <p>
+                            KSh 1,200
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            Garlic Infused Steak
+                        </h3>
+
+                        <p>
+                            Tender steak infused with
+                            garlic and herbs.
+                        </p>
+
+                        <strong>
+                            KSh 1,200
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BURGER -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/burger.jpg"
+                             alt="Classic Burger">
+
+                        <h3>
+                            Classic Burger
+                        </h3>
+
+                        <p>
+                            KSh 450
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            Classic Burger
+                        </h3>
+
+                        <p>
+                            Juicy beef burger with
+                            fresh vegetables.
+                        </p>
+
+                        <strong>
+                            KSh 450
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PIZZA -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/pizza.jpg.webp"
+                             alt="Cheesy Pizza">
+
+                        <h3>
+                            Cheesy Pizza
+                        </h3>
+
+                        <p>
+                            KSh 850
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            Cheesy Pizza
+                        </h3>
+
+                        <p>
+                            Freshly baked pizza
+                            loaded with cheese.
+                        </p>
+
+                        <strong>
+                            KSh 850
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FRIES -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/fries.jpg"
+                             alt="French Fries">
+
+                        <h3>
+                            French Fries
+                        </h3>
+
+                        <p>
+                            KSh 250
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            French Fries
+                        </h3>
+
+                        <p>
+                            Crispy golden fries
+                            served fresh.
+                        </p>
+
+                        <strong>
+                            KSh 250
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHICKEN -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/chicken.jpg"
+                             alt="Grilled Chicken">
+
+                        <h3>
+                            Grilled Chicken
+                        </h3>
+
+                        <p>
+                            KSh 950
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            Grilled Chicken
+                        </h3>
+
+                        <p>
+                            Tender chicken grilled
+                            with herbs and spices.
+                        </p>
+
+                        <strong>
+                            KSh 950
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PASTA -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front">
+
+                        <img src="images/pasta.jpg"
+                             alt="Creamy Pasta">
+
+                        <h3>
+                            Creamy Pasta
+                        </h3>
+
+                        <p>
+                            KSh 700
+                        </p>
+
+                    </div>
+
+
+                    <div class="flip-card-back">
+
+                        <h3>
+                            Creamy Pasta
+                        </h3>
+
+                        <p>
+                            Creamy pasta prepared
+                            with herbs and vegetables.
+                        </p>
+
+                        <strong>
+                            KSh 700
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </header>
+    </section>
 
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- ORDER FORM -->
 
+    <section class="content-section">
 
-        <!-- MENU SECTION -->
-        <section class="menu-section">
+        <h2 class="page-title">
+            Place Your Order
+        </h2>
 
-            <h2>Our Menu</h2>
 
-            <p class="section-introduction">
-                Choose from our selection of freshly prepared meals.
-            </p>
+        <p class="section-intro">
 
+            We currently offer dine-in service only.
+            Please provide your table number.
 
-            <!-- Menu Cards -->
-            <div class="menu-container">
-
-
-                <!-- Burger -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/burger.jpg"
-                        alt="Burger">
-
-                    <div class="menu-card-content">
-
-                        <h3>Classic Burger</h3>
-
-                        <p class="price">Ksh 450</p>
-
-                        <p>
-                            A delicious beef burger prepared with fresh
-                            ingredients.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "Very delicious burger." - Brian
-                            </p>
-
-                            <p>
-                                "Fresh and tasty." - Alice
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Pizza -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/pizza.jpg.webp"
-                        alt="Pizza">
-
-                    <div class="menu-card-content">
-
-                        <h3>Cheese Pizza</h3>
-
-                        <p class="price">Ksh 850</p>
-
-                        <p>
-                            Freshly baked pizza topped with cheese
-                            and delicious ingredients.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "Best pizza in town." - James
-                            </p>
-
-                            <p>
-                                "Very cheesy and filling." - Mary
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Fries -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/fries.jpg"
-                        alt="French Fries">
-
-                    <div class="menu-card-content">
-
-                        <h3>French Fries</h3>
-
-                        <p class="price">Ksh 250</p>
-
-                        <p>
-                            Crispy golden fries served fresh and hot.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "Perfectly crispy." - Kevin
-                            </p>
-
-                            <p>
-                                "Affordable and delicious." - Sarah
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Chicken -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/Grilledchicken.jpg"
-                        alt="Chicken">
-
-                    <div class="menu-card-content">
-
-                        <h3>Grilled Chicken</h3>
-
-                        <p class="price">Ksh 650</p>
-
-                        <p>
-                            Tender grilled chicken seasoned with
-                            our special kitchen spices.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "The chicken was really tasty." - David
-                            </p>
-
-                            <p>
-                                "Well cooked and flavorful." - Jane
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Steak -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/steak.png"
-                        alt="Beef Steak">
-
-                    <div class="menu-card-content">
-
-                        <h3>Beef Steak</h3>
-
-                        <p class="price">Ksh 950</p>
-
-                        <p>
-                            Tender beef steak prepared to perfection
-                            and served fresh.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "Excellent steak." - Peter
-                            </p>
-
-                            <p>
-                                "Very tender and delicious." - Lucy
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Chicken Burger -->
-                <div class="menu-card">
-
-                    <img
-                        src="images/chickenburger.png"
-                        alt="Chicken Burger">
-
-                    <div class="menu-card-content">
-
-                        <h3>Chicken Burger</h3>
-
-                        <p class="price">Ksh 550</p>
-
-                        <p>
-                            Crispy chicken served in a fresh burger
-                            bun with our special sauce.
-                        </p>
-
-                        <div class="reviews">
-
-                            <h4>Customer Reviews</h4>
-
-                            <p>
-                                "Really enjoyed the chicken burger." - Mark
-                            </p>
-
-                            <p>
-                                "Great taste and good portion." - Anne
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ORDER SECTION -->
-        <section class="order-section">
-
-            <div class="form-container">
-
-                <h2>Place Your Order</h2>
-
-                <p class="section-introduction">
-                    Please provide your table number and select your meal.
-                </p>
-
-
-                <form class="order-form">
-
-
-                    <div class="form-group">
-
-                        <label for="customer-name">
-                            Customer Name:
-                        </label>
-
-                        <input
-                            type="text"
-                            id="customer-name"
-                            name="customer-name"
-                            placeholder="Enter your name"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="table-number">
-                            Table Number:
-                        </label>
-
-                        <input
-                            type="number"
-                            id="table-number"
-                            name="table-number"
-                            min="1"
-                            placeholder="Enter table number"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="food-item">
-                            Select Food:
-                        </label>
-
-                        <select
-                            id="food-item"
-                            name="food-item">
-
-                            <option value="burger">
-                                Classic Burger - Ksh 450
-                            </option>
-
-                            <option value="pizza">
-                                Cheese Pizza - Ksh 850
-                            </option>
-
-                            <option value="fries">
-                                French Fries - Ksh 250
-                            </option>
-
-                            <option value="chicken">
-                                Grilled Chicken - Ksh 650
-                            </option>
-
-                            <option value="steak">
-                                Beef Steak - Ksh 950
-                            </option>
-
-                            <option value="chicken-burger">
-                                Chicken Burger - Ksh 550
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="quantity">
-                            Quantity:
-                        </label>
-
-                        <input
-                            type="number"
-                            id="quantity"
-                            name="quantity"
-                            min="1"
-                            value="1"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="special-instructions">
-                            Special Instructions:
-                        </label>
-
-                        <textarea
-                            id="special-instructions"
-                            name="special-instructions"
-                            rows="5"
-                            placeholder="Any special requests?"></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="form-button">
-
-                        Place Order
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- REVIEW SECTION -->
-        <section class="review-section">
-
-            <div class="form-container">
-
-                <h2>Leave A Review</h2>
-
-                <p class="section-introduction">
-                    Tell us about the food you enjoyed at Bobo's Kitchen.
-                </p>
-
-
-                <form class="review-form">
-
-
-                    <div class="form-group">
-
-                        <label for="review-name">
-                            Your Name:
-                        </label>
-
-                        <input
-                            type="text"
-                            id="review-name"
-                            name="review-name"
-                            placeholder="Enter your name"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="review-food">
-                            Food Item:
-                        </label>
-
-                        <select
-                            id="review-food"
-                            name="review-food">
-
-                            <option value="burger">
-                                Classic Burger
-                            </option>
-
-                            <option value="pizza">
-                                Cheese Pizza
-                            </option>
-
-                            <option value="fries">
-                                French Fries
-                            </option>
-
-                            <option value="chicken">
-                                Grilled Chicken
-                            </option>
-
-                            <option value="steak">
-                                Beef Steak
-                            </option>
-
-                            <option value="chicken-burger">
-                                Chicken Burger
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="review">
-                            Your Review:
-                        </label>
-
-                        <textarea
-                            id="review"
-                            name="review"
-                            rows="5"
-                            placeholder="Write your review here..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="form-button">
-
-                        Submit Review
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
-
-        <p>
-            © 2026 Bobo's Kitchen. All Rights Reserved.
         </p>
 
-    </footer>
+
+        <form id="orderForm"
+              class="main-form">
 
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+            <label for="customerName">
+                Customer Name:
+            </label>
+
+            <input type="text"
+                   id="customerName"
+                   name="customerName"
+                   required>
+
+
+            <label for="tableNumber">
+                Table Number:
+            </label>
+
+            <input type="number"
+                   id="tableNumber"
+                   name="tableNumber"
+                   min="1"
+                   required>
+
+
+            <label for="foodItem">
+                Select Food:
+            </label>
+
+            <select id="foodItem"
+                    name="foodItem"
+                    required>
+
+                <option value="">
+                    -- Select Food --
+                </option>
+
+                <option value="Garlic Infused Steak">
+                    Garlic Infused Steak
+                </option>
+
+                <option value="Classic Burger">
+                    Classic Burger
+                </option>
+
+                <option value="Cheesy Pizza">
+                    Cheesy Pizza
+                </option>
+
+                <option value="French Fries">
+                    French Fries
+                </option>
+
+                <option value="Grilled Chicken">
+                    Grilled Chicken
+                </option>
+
+                <option value="Creamy Pasta">
+                    Creamy Pasta
+                </option>
+
+            </select>
+
+
+            <label for="quantity">
+                Quantity:
+            </label>
+
+            <input type="number"
+                   id="quantity"
+                   name="quantity"
+                   min="1"
+                   required>
+
+
+            <label for="instructions">
+                Special Instructions:
+            </label>
+
+            <textarea id="instructions"
+                      name="instructions"
+                      rows="5"></textarea>
+
+
+            <button type="submit"
+                    class="btn">
+
+                Place Order
+
+            </button>
+
+
+            <p id="orderConfirmation"
+               class="confirmation-message">
+            </p>
+
+        </form>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="content-section">
+
+        <h2 class="page-title">
+            Customer Reviews
+        </h2>
+
+
+        <div class="review-container">
+
+            <div class="review-card">
+
+                <h3>Garlic Infused Steak</h3>
+
+                <p>
+                    "The steak was tender and delicious!"
+                </p>
+
+                <strong>
+                    - Brian
+                </strong>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <h3>Cheesy Pizza</h3>
+
+                <p>
+                    "Very cheesy and filling."
+                </p>
+
+                <strong>
+                    - Mary
+                </strong>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <h3>French Fries</h3>
+
+                <p>
+                    "Perfectly crispy."
+                </p>
+
+                <strong>
+                    - Kevin
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEW FORM -->
+
+    <section class="content-section">
+
+        <h2 class="page-title">
+            Leave A Review
+        </h2>
+
+
+        <form id="reviewForm"
+              class="main-form">
+
+
+            <label for="reviewName">
+                Your Name:
+            </label>
+
+            <input type="text"
+                   id="reviewName"
+                   name="reviewName"
+                   required>
+
+
+            <label for="reviewFood">
+                Food Item:
+            </label>
+
+            <select id="reviewFood"
+                    name="reviewFood"
+                    required>
+
+                <option value="">
+                    -- Select Food --
+                </option>
+
+                <option value="Garlic Infused Steak">
+                    Garlic Infused Steak
+                </option>
+
+                <option value="Classic Burger">
+                    Classic Burger
+                </option>
+
+                <option value="Cheesy Pizza">
+                    Cheesy Pizza
+                </option>
+
+                <option value="French Fries">
+                    French Fries
+                </option>
+
+                <option value="Grilled Chicken">
+                    Grilled Chicken
+                </option>
+
+                <option value="Creamy Pasta">
+                    Creamy Pasta
+                </option>
+
+            </select>
+
+
+            <label for="review">
+                Review:
+            </label>
+
+            <textarea id="review"
+                      name="review"
+                      rows="5"
+                      required></textarea>
+
+
+            <button type="submit"
+                    class="btn">
+
+                Submit Review
+
+            </button>
+
+
+            <p id="reviewConfirmation"
+               class="confirmation-message">
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Bobo's Kitchen.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
 
 </body>
 

@@ -2,141 +2,185 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login - Bobo's Kitchen</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Staff Login - Bobo's Kitchen</title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
-    <!-- External CSS -->
+
     <link rel="stylesheet" href="CSS file/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="header-container">
+    <div class="header-container">
 
-            <h1>Bobo's Kitchen</h1>
+        <h1 class="logo">
+            Bobo's Kitchen
+        </h1>
 
-            <nav class="navbar">
 
-                <a href="index.html">Home</a>
-                <a href="order.html">Order</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-                <a href="login.html">Login</a>
+        <nav class="navbar">
 
-                <button id="themeToggle">🌙 Dark Mode</button>
+            <a href="index.html">
+                Home
+            </a>
 
-            </nav>
+            <a href="order.html">
+                Order
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html"
+               class="active">
+                Staff Login
+            </a>
+
+        </nav>
+
+
+        <button id="themeToggle"
+                class="theme-button">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="form-section">
+
+        <div class="form-card">
+
+            <h2 class="page-title">
+                Staff Login
+            </h2>
+
+
+            <p class="section-intro">
+
+                Employees, employers and administrators
+                can access their dashboards here.
+
+            </p>
+
+
+            <form id="loginForm"
+                  action="PHP/login.php"
+                  method="POST">
+
+
+                <label for="username">
+                    Username:
+                </label>
+
+                <input type="text"
+                       id="username"
+                       name="username"
+                       required>
+
+
+                <label for="password">
+                    Password:
+                </label>
+
+                <input type="password"
+                       id="password"
+                       name="password"
+                       required>
+
+
+                <label for="role">
+                    Role:
+                </label>
+
+                <select id="role"
+                        name="role"
+                        required>
+
+                    <option value="">
+                        -- Select Role --
+                    </option>
+
+                    <option value="employee">
+                        Employee
+                    </option>
+
+                    <option value="employer">
+                        Employer
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+
+                <button type="submit"
+                        class="btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+
+            <p class="form-link">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Sign Up Here
+                </a>
+
+            </p>
 
         </div>
 
-    </header>
+    </section>
+
+</main>
 
 
-    <!-- Main Content -->
-    <main class="main-content">
+<footer class="site-footer">
 
-        <section class="login-section">
+    <p>
+        © 2026 Bobo's Kitchen.
+        All Rights Reserved.
+    </p>
 
-            <div class="form-container">
-
-                <h2>Staff Login</h2>
-
-                <p class="form-introduction">
-                    Login to access your Bobo's Kitchen account.
-                </p>
-
-                <form class="staff-form">
-
-                    <div class="form-group">
-
-                        <label for="username">Username:</label>
-
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            placeholder="Enter your username"
-                            required>
-
-                    </div>
+</footer>
 
 
-                    <div class="form-group">
-
-                        <label for="password">Password:</label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Enter your password"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="role">Role:</label>
-
-                        <select id="role" name="role">
-
-                            <option value="employee">Employee</option>
-                            <option value="employer">Employer</option>
-                            <option value="admin">Admin</option>
-
-                        </select>
-
-                    </div>
-
-
-                    <button type="submit" class="form-button">
-                        Login
-                    </button>
-
-                </form>
-
-
-                <div class="form-footer">
-
-                    <p>
-                        Don't have an account?
-                        <a href="signup.html">Sign Up Here</a>
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
-
-        <p>
-            © 2026 Bobo's Kitchen. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 
